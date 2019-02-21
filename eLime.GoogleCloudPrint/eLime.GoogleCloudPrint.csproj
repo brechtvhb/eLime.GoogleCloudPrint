@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netcoreapp2.2;netstandard2.0</TargetFrameworks>
+    <LangVersion>latest</LangVersion>
+    <Authors>Brecht Vanhaesebrouck</Authors>
+    <Description>Google Cloud Print implementation for C#. Supports using Service Accounts.
+</Description>
+    <Company>eLime</Company>
+    <PackageProjectUrl>https://github.com/brechtvhb/eLime.GoogleCloudPrint</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/brechtvhb/eLime.GoogleCloudPrint</RepositoryUrl>
+    <PackageTags>Google Cloud Print Remote Printing GCP</PackageTags>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Google.Apis.Oauth2.v2" Version="1.36.1.1404" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Interfaces\" />
+  </ItemGroup>
+
+</Project>
