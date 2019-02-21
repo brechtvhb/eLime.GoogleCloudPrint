@@ -140,7 +140,7 @@ namespace eLime.GoogleCloudPrint
             }
         }
 
-        public async Task<IEnumerable<PrintJob>> GetJobs(String printerId, Int32 page = 0, Int32 pageSize = 25, String q = null, CancellationToken token = default)
+        public async Task<(IEnumerable<PrintJob>, Int32 total)> GetJobs(String printerId, Int32 page = 0, Int32 pageSize = 25, String q = null, CancellationToken token = default)
         {
             try
             {
@@ -153,11 +153,11 @@ namespace eLime.GoogleCloudPrint
                 var client = await GetClient(token);
                 var response = await client.PostAsync<PrintJobs>(GoogleCloudPrintMethod.Jobs, postData, token);
 
-                return response.Jobs;
+                return (response.Jobs, response.Range.JobsTotal);
             }
             catch (Exception ex)
             {
-                return new List<PrintJob>();
+                return (new List<PrintJob>(), 0);
             }
         }
 

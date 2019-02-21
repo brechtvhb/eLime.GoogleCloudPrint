@@ -9,6 +9,14 @@ namespace eLime.GoogleCloudPrint.Models
         public bool Success { get; set; }
 
         public IEnumerable<PrintJob> Jobs { get; set; } = new List<PrintJob>();
+
+        public Range Range { get; set; }
+    }
+
+    public class Range
+    {
+        public Int32 JobsTotal { get; set; }
+        public Int32 JobsCount { get; set; }
     }
 
     public class PrintJob
