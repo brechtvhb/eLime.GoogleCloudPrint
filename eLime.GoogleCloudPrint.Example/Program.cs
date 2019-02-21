@@ -38,6 +38,7 @@ namespace eLime.GoogleCloudPrint.Example
                 }";
 
                 //print document. Set print in color, duplex printing and paper tray 2 as source
+
                 var printjob = printService.PrintDocument(printerid, "example.pdf", cjt, "http://www.africau.edu/images/default/sample.pdf");
             }
         }
